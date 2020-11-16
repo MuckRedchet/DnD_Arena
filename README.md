@@ -39,3 +39,7 @@ Correction of minor syntactic errors.
 
 Transfer of parameters of opponents to lists for more convenient manipulation of values
 Пересадка параметров опонентов на списки для более удобного манипулирования значениями
+
+
+Fixed bug with incorrect display of damage
+испрален баг неправильного отображения урона
