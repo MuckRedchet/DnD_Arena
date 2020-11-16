@@ -43,3 +43,7 @@ Transfer of parameters of opponents to lists for more convenient manipulation of
 
 Fixed bug with incorrect display of damage
 испрален баг неправильного отображения урона
+
+
+actoring of the script for applying damage on critical success
+рефакторинг сценария нанесения урона при критическом успехе
