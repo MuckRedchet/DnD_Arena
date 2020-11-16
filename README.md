@@ -34,3 +34,8 @@ Correction of minor syntactic errors.
 Перенес параметры опонентов из класса 'Enemy' в файл 'main'.
 Переработал констуктор класса 'Enemy' на прием параметров опонента при создании экземпляра.  
 Исправление мелких синтактических ошибок. 
+
+
+
+Transfer of parameters of opponents to lists for more convenient manipulation of values
+Пересадка параметров опонентов на списки для более удобного манипулирования значениями
