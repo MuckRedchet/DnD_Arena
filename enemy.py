@@ -1,17 +1,15 @@
 from random import randint
 
 class Enemy:
-    kd = 15  # коофициент доспеха
-    hp = randint(20, 30)  # Количество здоровья
-    strength = -1  # сила
-    dexterity = 2  # лвкость
-    att = [1, 6]  # количество кубов, наминал
-    add_damage = 5  # + к урону
-    add_hit = 5  # + к попаданию
-
-    def __init__(self,name):  # конструктор класса
+    def __init__(self, name, kd, hp, strength, dexterity, att, add_damage, add_hit):  # конструктор класса
         self.name = name  # имя
-
+        self.kd = kd  # коофициент доспеха
+        self.hp = hp  # диапозон количество здоровья
+        self.strength = strength  # сила
+        self.dexterity = dexterity  # ловкость
+        self.att = att  # количество кубов, наминал
+        self.add_damage = add_damage  # + к урону
+        self.add_hit = add_hit  # + к попаданию
 
     def attack(self):
         dice_roll = randint(1, 20)

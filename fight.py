@@ -12,7 +12,7 @@ def fight(figter_0, figter_1):
             if figter_0_att[1] > figter_1.kd:  # поподание против кд
                 figter_1.hp -= figter_0_att[2]  # отнимание хп противника
                 if figter_1.hp <= 0:  # условие проиграша второго опонента
-                    print(figter_0.name, 'нанес смертельный удар в', figter_1_att[0], 'УРОНА',figter_0.name, 'победил')
+                    print(figter_0.name, 'нанес смертельный удар в', figter_0_att[0], 'УРОНА',figter_0.name, 'победил')
                     break
                 print(figter_0.name, 'нанес', figter_1.name, figter_0_att[2], 'урона. у него осталось', figter_1.hp,'жизней')
             else:
