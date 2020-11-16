@@ -45,5 +45,5 @@ Fixed bug with incorrect display of damage
 испрален баг неправильного отображения урона
 
 
-refactoring of the script for applying damage on critical success
+actoring of the script for applying damage on critical success
 рефакторинг сценария нанесения урона при критическом успехе
