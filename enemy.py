@@ -13,22 +13,23 @@ class Enemy:
 
     def attack(self):
         dice_roll = randint(1, 20)
-        dice_roll_attack = randint(1, 20) + self.strength + self.add_hit
+        dice_roll_attack = dice_roll + self.strength + self.add_hit
         attack_m = self.att
+        add_damage = self.add_damage
         damage = 0
         if dice_roll == 1:
-            critical_fail = randint(1, self.add_damage)
+            critical_fail = randint(1, add_damage)
             print('КРИТ ПРОВАЛ', self.name, 'бьет по себе', critical_fail, 'урона')
             self.hp -= critical_fail
             ress = [dice_roll, dice_roll_attack, 0]
         elif dice_roll == 20:
-            critical_luck = attack_m[1] * 2
+            critical_luck = attack_m[1] * 2 + add_damage
             print('КРИТ УСПЕХ', self.name, 'двойной', critical_luck, 'урон')
             ress = [dice_roll, dice_roll_attack, critical_luck]
         else:
             i = 0
             while i != attack_m[0]:
-                damage += randint(1, attack_m[1]) + self.add_damage
+                damage += randint(1, attack_m[1]) + add_damage
                 i += 1
             ress = [dice_roll, dice_roll_attack, damage]
         return ress
