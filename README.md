@@ -39,3 +39,7 @@ Correction of minor syntactic errors.
 
 Transfer of parameters of opponents to lists for more convenient manipulation of values
 Пересадка параметров опонентов на списки для более удобного манипулирования значениями
+
+
+refactoring of the script for applying damage on critical success
+рефакторинг сценария нанесения урона при критическом успехе
