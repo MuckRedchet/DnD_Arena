@@ -17,16 +17,20 @@ class Enemy:
         attack_m = self.att
         add_damage = self.add_damage
         damage = 0
-        if dice_roll == 1:
+        if dice_roll == 1:  # сценарий крит провала
             critical_fail = randint(1, add_damage)
             print('КРИТ ПРОВАЛ', self.name, 'бьет по себе', critical_fail, 'урона')
             self.hp -= critical_fail
             ress = [dice_roll, dice_roll_attack, 0]
-        elif dice_roll == 20:
-            critical_luck = attack_m[1] * 2 + add_damage
-            print('КРИТ УСПЕХ', self.name, 'двойной', critical_luck, 'урон')
-            ress = [dice_roll, dice_roll_attack, critical_luck]
-        else:
+        elif dice_roll == 20:  # сценарий крит успеха
+            i = 0
+            while i != attack_m[0]:
+                damage = randint(1, attack_m[1]) * 2
+                i += 1
+            damage += add_damage
+            print('КРИТ УСПЕХ', self.name, 'двойной урон', damage)
+            ress = [dice_roll, dice_roll_attack, damage]
+        else:  # обычкая атака
             i = 0
             while i != attack_m[0]:
                 damage += randint(1, attack_m[1]) + add_damage
