@@ -24,3 +24,13 @@ enemy.py - enemy class
 Main.py - главный файл
 fight.py - код проведения боя, принемает два обьекта класса enemy и проводит бой по правилам DnD
 enemy.py - класс противника
+
+
+
+Moved the parameters of the opponents from the 'Enemy' class to the file 'main'.
+Redesigned the constructor of the Enemy class for the parameters of the opponent when creating an instance.
+Correction of minor syntactic errors.
+
+Перенес параметры опонентов из класса 'Enemy' в файл 'main'.
+Переработал констуктор класса 'Enemy' на прием параметров опонента при создании экземпляра.  
+Исправление мелких синтактических ошибок. 
