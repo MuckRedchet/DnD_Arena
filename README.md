@@ -55,3 +55,7 @@ in the combat process in case of a miss of the opponents
 
 Добавил новый файл 'variation_attacks.py' в нем находится функция 'miss' добавляющая вариативности
 в боевой процесс в случае промоха опонентов
+
+
+Converting the code to the PeP8 standard
+Приведение кода к стандарту PeP8

@@ -1,5 +1,6 @@
 from random import randint
 
+
 class Enemy:
     def __init__(self, name, kd, hp, strength, dexterity, att, add_damage, add_hit):  # конструктор класса
         self.name = name  # имя
