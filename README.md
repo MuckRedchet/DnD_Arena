@@ -50,9 +50,16 @@ refactoring of the script for applying damage on critical success
 
 Added a new file 'variant_attacks.py' in it there is a function 'miss' that adds variations
 in the combat process in case of a miss of the opponents
+
 Добавил новый файл 'variation_attacks.py' в нем находится функция 'miss' добавляющая вариативности
 в боевой процесс в случае промоха опонентов
 
 
 Converting the code to the PeP8 standard
 Приведение кода к стандарту PeP8
+
+Added new function 'miss_critical' to 'variant_attacks.py' adding variability to combat
+fail roll
+
+Добавил новую функцию 'miss_critical' в 'variation_attacks.py' добавляющую вариотивности в боевой
+процесс в случае критического провала

@@ -19,10 +19,9 @@ class Enemy:
         add_damage = self.add_damage
         damage = 0
         if dice_roll == 1:  # сценарий крит провала
-            critical_fail = randint(1, add_damage)
-            print('КРИТ ПРОВАЛ', self.name, 'бьет по себе', critical_fail, 'урона')
-            self.hp -= critical_fail
-            ress = [dice_roll, dice_roll_attack, 0]
+            damage = randint(1, add_damage)
+            self.hp -= damage
+            ress = [dice_roll, dice_roll_attack, damage]
         elif dice_roll == 20:  # сценарий крит успеха
             i = 0
             while i != attack_m[0]:
