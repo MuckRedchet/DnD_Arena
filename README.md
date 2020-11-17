@@ -55,6 +55,3 @@ in the combat process in case of a miss of the opponents
 
 Добавил новый файл 'variation_attacks.py' в нем находится функция 'miss' добавляющая вариативности
 в боевой процесс в случае промоха опонентов
-
-actoring of the script for applying damage on critical success
-рефакторинг сценария нанесения урона при критическом успехе
