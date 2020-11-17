@@ -59,3 +59,9 @@ in the combat process in case of a miss of the opponents
 
 Converting the code to the PeP8 standard
 Приведение кода к стандарту PeP8
+
+Added new function 'miss_critical' to 'variant_attacks.py' adding variability to combat
+fail roll
+
+Добавил новую функцию 'miss_critical' в 'variation_attacks.py' добавляющую вариотивности в боевой
+процесс в случае критического провала

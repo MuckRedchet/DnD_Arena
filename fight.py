@@ -1,4 +1,4 @@
-from variation_attacks import miss
+from variation_attacks import miss, miss_critical
 from time import sleep
 from random import randint
 
@@ -11,7 +11,9 @@ def fight(figter_0, figter_1):
         initiative = [randint(1, 20) + figter_0.dexterity, randint(1, 20) + figter_1.dexterity]  # бросок инициативы
         if initiative[0] > initiative[1]:  # сравнение инициативы
             figter_0_att = figter_0.attack()  # получение значений атаки
-            if figter_0_att[1] > figter_1.kd:  # поподание против кд
+            if figter_0_att[0] == 1:
+                print(miss_critical(figter_0.name, figter_0_att[2]))
+            elif figter_0_att[1] > figter_1.kd:  # поподание против кд
                 figter_1.hp -= figter_0_att[2]  # отнимание хп противника
                 if figter_1.hp <= 0:  # условие проиграша второго опонента
                     print(figter_0.name, 'нанес смертельный удар в', figter_0_att[2], 'УРОНА', figter_0.name, 'победил')
@@ -30,5 +32,5 @@ def fight(figter_0, figter_1):
                 print(figter_1.name, 'нанес', figter_0.name, figter_1_att[2], 'урона. у него осталось', figter_0.hp,
                       'жизней')
             else:
-                print(miss(figter_0.name, figter_1.name))
-        sleep(0.8)
+                print(miss(figter_1.name, figter_0.name))
+        sleep(0.005)
