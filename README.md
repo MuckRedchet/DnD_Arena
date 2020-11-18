@@ -63,3 +63,10 @@ fail roll
 
 Добавил новую функцию 'miss_critical' в 'variation_attacks.py' добавляющую вариотивности в боевой
 процесс в случае критического провала
+
+
+Added a new function 'critical_critical_success' to 'variant_attacks.py' which adds variability to combat
+critical hit process
+
+Добавил новую функцию 'critical_critical_success' в 'variation_attacks.py' добавляющую вариотивности в боевой
+процесс в случае критического поподания
