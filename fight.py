@@ -1,4 +1,4 @@
-from variation_attacks import miss, miss_critical
+from variation_attacks import miss, miss_critical, critical_success
 from time import sleep
 from random import randint
 
@@ -13,6 +13,8 @@ def fight(figter_0, figter_1):
             figter_0_att = figter_0.attack()  # получение значений атаки
             if figter_0_att[0] == 1:
                 print(miss_critical(figter_0.name, figter_0_att[2]))
+            elif figter_0_att[0] == 20:
+                print(critical_success(figter_0.name, figter_1.name, figter_0_att[2]))
             elif figter_0_att[1] > figter_1.kd:  # поподание против кд
                 figter_1.hp -= figter_0_att[2]  # отнимание хп противника
                 if figter_1.hp <= 0:  # условие проиграша второго опонента
@@ -24,7 +26,11 @@ def fight(figter_0, figter_1):
                 print(miss(figter_0.name, figter_1.name))
         elif initiative[0] < initiative[1]:  # сравнение инициативы
             figter_1_att = figter_1.attack()  # получение значений атаки
-            if figter_1_att[1] > figter_0.kd:  # поподание против кд
+            if figter_1_att[0] == 1:
+                print(miss_critical(figter_1.name, figter_1_att[2]))
+            elif figter_1_att[0] == 20:
+                print(critical_success(figter_1.name, figter_0.name, figter_1_att[2]))
+            elif figter_1_att[1] > figter_0.kd:  # поподание против кд
                 figter_0.hp -= figter_1_att[2]  # отнимание хп противника
                 if figter_0.hp <= 0:  # условие проиграша первого опонента
                     print(figter_1.name, 'нанес смертельный удар в', figter_1_att[2], 'УРОНА', figter_1.name, 'победил')

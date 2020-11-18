@@ -14,9 +14,22 @@ def miss(attacking: str, defender: str) -> str:
 
 def miss_critical(name: str, damage: int) -> str:
     damage = str(damage)
-    miss_list_crit = ['КРИТ ПРОВАЛ ' + name + ' бьет по себе ' + damage + ' урона',
+    miss_crit_list = ['КРИТ ПРОВАЛ ' + name + ' бьет по себе ' + damage + ' урона',
                       'КРИТ ПРОВАЛ ' + name + ' умудрился попасть по себе ' + damage + ' урона',
                       'КРИТ ПРОВАЛ ' + name + ' спотыкается и ранит себя на ' + damage + ' урона',
                       'КРИТ ПРОВАЛ ' + name + ' нанес себе ' + damage + ' урона']
-    miss_crit = miss_list_crit[randint(0, 3)]
+    miss_crit = miss_crit_list[randint(0, 3)]
     return miss_crit
+
+
+def critical_success(attacking: str, defender: str, damage: int) -> str:
+    damage = str(damage)
+    crit_success_list = ['КРИТ УСПЕХ ' + attacking + ' наносит сокрушительный удар по ' + defender + ' ' + damage +
+                         ' урона',
+                         'КРИТ УСПЕХ ' + attacking + ' попадает точно по ' + defender + ' наносит ' + damage + ' урона',
+                         'КРИТ УСПЕХ ' + attacking + ' проводит молниносную атаку ' + defender + ' получает ' + damage +
+                         ' урона',
+                         'КРИТ УСПЕХ ' + attacking + ' попал в уязвимость ' + defender + 'а  на ' + damage + ' урона']
+
+    crit_success = crit_success_list[randint(0, 3)]
+    return crit_success

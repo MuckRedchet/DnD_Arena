@@ -25,15 +25,15 @@ class Enemy:
         elif dice_roll == 20:  # сценарий крит успеха
             i = 0
             while i != attack_m[0]:
-                damage = randint(1, attack_m[1]) * 2
+                damage += randint(1, attack_m[1]) * 2
                 i += 1
             damage += add_damage
-            print('КРИТ УСПЕХ', self.name, 'двойной урон', damage)
             ress = [dice_roll, dice_roll_attack, damage]
         else:  # обычкая атака
             i = 0
             while i != attack_m[0]:
-                damage += randint(1, attack_m[1]) + add_damage
+                damage += randint(1, attack_m[1])
                 i += 1
+            damage += add_damage
             ress = [dice_roll, dice_roll_attack, damage]
         return ress
