@@ -1,4 +1,4 @@
-from variation_attacks import miss, miss_critical, critical_success
+from variation_attacks import miss, miss_critical, critical_success , death
 from time import sleep
 from random import randint
 
@@ -18,7 +18,7 @@ def fight(figter_0, figter_1):
             elif figter_0_att[1] > figter_1.kd:  # поподание против кд
                 figter_1.hp -= figter_0_att[2]  # отнимание хп противника
                 if figter_1.hp <= 0:  # условие проиграша второго опонента
-                    print(figter_0.name, 'нанес смертельный удар в', figter_0_att[2], 'УРОНА', figter_0.name, 'победил')
+                    print(death(figter_0.name, figter_1.name, figter_0_att[2]))
                     break
                 print(figter_0.name, 'нанес', figter_1.name, figter_0_att[2], 'урона. у него осталось', figter_1.hp,
                       'жизней')
@@ -33,10 +33,10 @@ def fight(figter_0, figter_1):
             elif figter_1_att[1] > figter_0.kd:  # поподание против кд
                 figter_0.hp -= figter_1_att[2]  # отнимание хп противника
                 if figter_0.hp <= 0:  # условие проиграша первого опонента
-                    print(figter_1.name, 'нанес смертельный удар в', figter_1_att[2], 'УРОНА', figter_1.name, 'победил')
+                    print(death(figter_1.name, figter_0.name, figter_1_att[2]))
                     break
                 print(figter_1.name, 'нанес', figter_0.name, figter_1_att[2], 'урона. у него осталось', figter_0.hp,
                       'жизней')
             else:
                 print(miss(figter_1.name, figter_0.name))
-        sleep(0.005)
+        sleep(0.8)

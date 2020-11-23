@@ -33,3 +33,14 @@ def critical_success(attacking: str, defender: str, damage: int) -> str:
 
     crit_success = crit_success_list[randint(0, 3)]
     return crit_success
+
+
+def death(attacking: str, defender: str, damage: int) -> str:
+    damage = str(damage)
+    death_list = [attacking + ' наносит смертельный удар по ' + defender + 'у ' + damage + ' урона',
+                  attacking + ' обезглавливает ' + defender + 'a ' + damage + ' урона',
+                  defender + ' скончался от удара ' + attacking + 'a ' + damage + ' урона',
+                  attacking + ' провел удар в сердце ' + defender + 'a ' + damage + ' урона']
+
+    death = death_list[randint(0, 3)]
+    return death

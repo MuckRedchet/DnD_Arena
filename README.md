@@ -72,3 +72,10 @@ critical hit process
 
 Добавил новую функцию 'critical_critical_success' в 'variation_attacks.py' добавляющую вариотивности в боевой
 процесс в случае критического поподания
+
+
+Added a new function 'death' to 'variant_attacks.py' that adds variability to combat
+death process of one of the opponents
+
+Добавил новую функцию 'death' в 'variation_attacks.py' добавляющую вариотивности в боевой
+процесс в случае смерти одно из опонентов
