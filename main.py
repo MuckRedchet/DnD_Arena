@@ -3,7 +3,7 @@ from fight import fight
 from random import randint
 
 kd = [17, 18]  # коофициент доспеха
-hp = [randint(168, 170), randint(180, 187)]  # Количество здоровья
+hp = [randint(10, 11), randint(10, 11)]  # Количество здоровья
 strength = [6, 6]  # сила
 dexterity = [3, 1]  # ловкость
 att = [[3, 10], [4, 6]]  # количество кубов, наминал

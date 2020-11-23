@@ -17,10 +17,11 @@ class Enemy:
         dice_roll_attack = dice_roll + self.strength + self.add_hit
         attack_m = self.att
         add_damage = self.add_damage
+        hp = self.hp
         damage = 0
         if dice_roll == 1:  # сценарий крит провала
             damage = randint(1, add_damage)
-            self.hp -= damage
+            hp -= damage
             ress = [dice_roll, dice_roll_attack, damage]
         elif dice_roll == 20:  # сценарий крит успеха
             i = 0
