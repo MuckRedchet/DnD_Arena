@@ -29,8 +29,6 @@ class Fight:
                         print(death(figter_0.name, figter_1.name, figter_0_att[2]))
                         break
                     print(attack_variation(figter_0.name, figter_1.name, figter_0_att[2], figter_1.hp))
-                    #print(figter_0.name, 'нанес', figter_1.name, figter_0_att[2], 'урона. у него осталось', figter_1.hp,
-                          #'жизней')
                 else:
                     print(miss(figter_0.name, figter_1.name))
             elif initiative[0] < initiative[1]:  # сравнение инициативы
@@ -44,8 +42,7 @@ class Fight:
                     if figter_0.hp <= 0:  # условие проиграша первого опонента
                         print(death(figter_1.name, figter_0.name, figter_1_att[2]))
                         break
-                    print(figter_1.name, 'нанес', figter_0.name, figter_1_att[2], 'урона. у него осталось', figter_0.hp,
-                          'жизней')
+                    print(attack_variation(figter_1.name, figter_0.name, figter_1_att[2], figter_0.hp))
                 else:
                     print(miss(figter_1.name, figter_0.name))
             sleep(0.8)
