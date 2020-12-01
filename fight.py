@@ -1,6 +1,7 @@
-from variation_attacks import miss, miss_critical, critical_success , death
+from variation_attacks import miss, miss_critical, critical_success, death , attack_variation
 from time import sleep
 from random import randint
+
 
 class Fight:
     def __init__(self, figter_0, figter_1):
@@ -10,7 +11,6 @@ class Fight:
     def fight(self):
         figter_0 = self.figter_0
         figter_1 = self.figter_1
-
 
         print('у ', figter_0.name, figter_0.hp, 'жизней')
         print('у ', figter_1.name, figter_1.hp, 'жизней')
@@ -28,8 +28,9 @@ class Fight:
                     if figter_1.hp <= 0:  # условие проиграша второго опонента
                         print(death(figter_0.name, figter_1.name, figter_0_att[2]))
                         break
-                    print(figter_0.name, 'нанес', figter_1.name, figter_0_att[2], 'урона. у него осталось', figter_1.hp,
-                          'жизней')
+                    print(attack_variation(figter_0.name, figter_1.name, figter_0_att[2], figter_1.hp))
+                    #print(figter_0.name, 'нанес', figter_1.name, figter_0_att[2], 'урона. у него осталось', figter_1.hp,
+                          #'жизней')
                 else:
                     print(miss(figter_0.name, figter_1.name))
             elif initiative[0] < initiative[1]:  # сравнение инициативы
