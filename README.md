@@ -84,3 +84,8 @@ death process of one of the opponents
 OOP Refactoring the fight file
 
 ООП Рефакторинг файла fight
+
+
+Added attack variations
+
+Добавлены вариации атак
