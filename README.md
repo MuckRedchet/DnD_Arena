@@ -79,3 +79,8 @@ death process of one of the opponents
 
 Добавил новую функцию 'death' в 'variation_attacks.py' добавляющую вариотивности в боевой
 процесс в случае смерти одно из опонентов
+
+
+OOP Refactoring the fight file
+
+ООП Рефакторинг файла fight
