@@ -1,6 +1,24 @@
 from random import randint
 
 
+def attack_variation(attacking: str, defender: str, damage: int, hp: int):
+    damage = str(damage)
+    hp = str(hp)
+
+    attack_var_list = [attacking + ' нанес ' + defender + 'у ' + damage + ' урона' + ' у него осталось ' + hp +
+                       ' жизней',
+                       attacking + ' поразил ' + defender + 'а ' + damage + ' урона' + ' у него осталось ' + hp +
+                       ' жизней',
+                       attacking + ' попал по ' + defender + 'у ' + damage + ' урона' + ' у него осталось ' + hp +
+                       ' жизней',
+                       attacking + ' атокавал ' + defender + 'а ' + damage + ' урона' + ' у него осталось ' + hp +
+                       ' жизней',
+                       ]
+
+    attack_var = attack_var_list[randint(0,3)]
+    return attack_var
+
+
 def miss(attacking: str, defender: str) -> str:
     miss_list = [attacking + ' промахнулся по ' + defender,
                  defender + ' увернулся от удара ' + attacking + 'a',
@@ -42,5 +60,5 @@ def death(attacking: str, defender: str, damage: int) -> str:
                   defender + ' скончался от удара ' + attacking + 'a ' + damage + ' урона',
                   attacking + ' провел удар в сердце ' + defender + 'a ' + damage + ' урона']
 
-    death = death_list[randint(0, 3)]
-    return death
+    death_pers = death_list[randint(0, 3)]
+    return death_pers
