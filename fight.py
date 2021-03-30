@@ -1,4 +1,4 @@
-from variation_attacks import miss, miss_critical, critical_success, death , attack_variation
+from variation_attacks import miss, miss_critical, critical_success, death, attack_variation
 from time import sleep
 from random import randint
 
@@ -19,30 +19,63 @@ class Fight:
             initiative = [randint(1, 20) + figter_0.dexterity, randint(1, 20) + figter_1.dexterity]  # бросок инициативы
             if initiative[0] > initiative[1]:  # сравнение инициативы
                 figter_0_att = figter_0.attack()  # получение значений атаки
-                if figter_0_att[0] == 1:
-                    print(miss_critical(figter_0.name, figter_0_att[2]))
-                elif figter_0_att[0] == 20:
-                    print(critical_success(figter_0.name, figter_1.name, figter_0_att[2]))
-                elif figter_0_att[1] > figter_1.kd:  # поподание против кд
-                    figter_1.hp -= figter_0_att[2]  # отнимание хп противника
+                if figter_0_att['dice_roll'] == 1:
+                    print(miss_critical(figter_0.name, figter_0_att['damage']))
+                elif figter_0_att['dice_roll'] == 20:
+                    print(critical_success(figter_0.name, figter_1.name, figter_0_att['damage']))
+                elif figter_0_att['dice_roll_attack'] > figter_1.kd:  # поподание против кд
+                    figter_1.hp -= figter_0_att['damage']  # отнимание хп противника
                     if figter_1.hp <= 0:  # условие проиграша второго опонента
-                        print(death(figter_0.name, figter_1.name, figter_0_att[2]))
+                        print(death(figter_0.name, figter_1.name, figter_0_att['damage']))
                         break
-                    print(attack_variation(figter_0.name, figter_1.name, figter_0_att[2], figter_1.hp))
+                    print(attack_variation(figter_0.name, figter_1.name, figter_0_att['damage'], figter_1.hp))
                 else:
                     print(miss(figter_0.name, figter_1.name))
-            elif initiative[0] < initiative[1]:  # сравнение инициативы
+#
                 figter_1_att = figter_1.attack()  # получение значений атаки
-                if figter_1_att[0] == 1:
-                    print(miss_critical(figter_1.name, figter_1_att[2]))
-                elif figter_1_att[0] == 20:
-                    print(critical_success(figter_1.name, figter_0.name, figter_1_att[2]))
-                elif figter_1_att[1] > figter_0.kd:  # поподание против кд
-                    figter_0.hp -= figter_1_att[2]  # отнимание хп противника
+                if figter_1_att['dice_roll'] == 1:
+                    print(miss_critical(figter_1.name, figter_1_att['damage']))
+                elif figter_1_att['dice_roll'] == 20:
+                    print(critical_success(figter_1.name, figter_0.name, figter_1_att['damage']))
+                elif figter_1_att['dice_roll_attack'] > figter_0.kd:  # поподание против кд
+                    figter_0.hp -= figter_1_att['damage']  # отнимание хп противника
                     if figter_0.hp <= 0:  # условие проиграша первого опонента
-                        print(death(figter_1.name, figter_0.name, figter_1_att[2]))
+                        print(death(figter_1.name, figter_0.name, figter_1_att['damage']))
                         break
-                    print(attack_variation(figter_1.name, figter_0.name, figter_1_att[2], figter_0.hp))
+                    print(attack_variation(figter_1.name, figter_0.name, figter_1_att['damage'], figter_0.hp))
                 else:
                     print(miss(figter_1.name, figter_0.name))
+#
+            elif initiative[0] < initiative[1]:  # сравнение инициативы
+                figter_1_att = figter_1.attack()  # получение значений атаки
+                if figter_1_att['dice_roll'] == 1:
+                    print(miss_critical(figter_1.name, figter_1_att['damage']))
+                elif figter_1_att['dice_roll'] == 20:
+                    print(critical_success(figter_1.name, figter_0.name, figter_1_att['damage']))
+                elif figter_1_att['dice_roll_attack'] > figter_0.kd:  # поподание против кд
+                    figter_0.hp -= figter_1_att['damage']  # отнимание хп противника
+                    if figter_0.hp <= 0:  # условие проиграша первого опонента
+                        print(death(figter_1.name, figter_0.name, figter_1_att['damage']))
+                        break
+                    print(attack_variation(figter_1.name, figter_0.name, figter_1_att['damage'], figter_0.hp))
+                else:
+                    print(miss(figter_1.name, figter_0.name))
+
+#
+
+                figter_0_att = figter_0.attack()  # получение значений атаки
+                if figter_0_att['dice_roll'] == 1:
+                    print(miss_critical(figter_0.name, figter_0_att['damage']))
+                elif figter_0_att['dice_roll'] == 20:
+                    print(critical_success(figter_0.name, figter_1.name, figter_0_att['damage']))
+                elif figter_0_att['dice_roll_attack'] > figter_1.kd:  # поподание против кд
+                    figter_1.hp -= figter_0_att['damage']  # отнимание хп противника
+                    if figter_1.hp <= 0:  # условие проиграша второго опонента
+                        print(death(figter_0.name, figter_1.name, figter_0_att['damage']))
+                        break
+                    print(attack_variation(figter_0.name, figter_1.name, figter_0_att['damage'], figter_1.hp))
+                else:
+                    print(miss(figter_0.name, figter_1.name))
+
+#
             sleep(0.8)
