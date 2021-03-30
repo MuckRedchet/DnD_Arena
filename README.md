@@ -82,3 +82,15 @@ death process of one of the opponents
 OOP Refactoring the fight file
 
 ООП Рефакторинг файла fight
+
+
+30.03.2021
+Refactoring all cycles in the 'Enemy' class.
+Return directly from the condition in the 'ENEMY' class.
+Correction class 'Fight' - Now the opponents beat each other in turn as it should be.
+Dictionaries instead of lists for readability of the code.
+
+Рефакторинг всех циклов в классе 'Enemy'.
+return прямо из условия в классе 'Enemy'.
+Исправление класса 'Fight' - теперь противники бьют друг друга по очереди.
+Словари вместо списков для удобочитаемости кода.
