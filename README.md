@@ -45,11 +45,13 @@ Fixed bug with incorrect display of damage
 испрален баг неправильного отображения урона
 
 
+
 refactoring of the script for applying damage on critical success
 рефакторинг сценария нанесения урона при критическом успехе
 
 Added a new file 'variant_attacks.py' in it there is a function 'miss' that adds variations
 in the combat process in case of a miss of the opponents
+
 
 Добавил новый файл 'variation_attacks.py' в нем находится функция 'miss' добавляющая вариативности
 в боевой процесс в случае промоха опонентов
@@ -82,7 +84,6 @@ death process of one of the opponents
 OOP Refactoring the fight file
 
 ООП Рефакторинг файла fight
-
 
 30.03.2021
 Refactoring all cycles in the 'Enemy' class.
